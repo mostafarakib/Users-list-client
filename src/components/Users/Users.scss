@@ -1,0 +1,59 @@
+.user-list-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 2rem;
+  padding: 3rem 0;
+
+  //   card columns for different screen sizes
+  @media (max-width: 992px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.user {
+  position: relative;
+  text-align: center;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
+
+  &:hover {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3.65rem;
+    background-color: #cdc8b5;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+
+  &-image {
+    background-color: #fff;
+    width: 5rem;
+    height: 5rem;
+    display: block;
+    border-radius: 50%;
+    margin: 0 auto;
+    outline: 3px solid #cdc8b5;
+    padding: 5px;
+    position: relative;
+    z-index: 10;
+  }
+
+  &-designation {
+    font-weight: 600;
+  }
+}
