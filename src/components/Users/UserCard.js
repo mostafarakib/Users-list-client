@@ -1,11 +1,17 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function UserCard({ user }) {
+  const navigate = useNavigate();
+
+  const handleCardClick = () => {
+    navigate(`/user/${user.id}`);
+  };
   return (
-    <div className="card user">
+    <div className="card user-card" onClick={handleCardClick}>
       <div className="card-body">
         <img
-          className="user-image"
+          className="user-card-image"
           src={user.image}
           alt={`${user.firstName} ${user.lastName} img`}
         />
@@ -25,11 +31,11 @@ export default function UserCard({ user }) {
             viewBox="0 0 493.497 493.497"
             stroke="#cdc8b5"
           >
-            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
             <g
               id="SVGRepo_tracerCarrier"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             ></g>
             <g id="SVGRepo_iconCarrier">
               {" "}
@@ -50,11 +56,11 @@ export default function UserCard({ user }) {
             viewBox="0 0 297 297"
             stroke="#cdc8b5"
           >
-            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
             <g
               id="SVGRepo_tracerCarrier"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             ></g>
             <g id="SVGRepo_iconCarrier">
               {" "}
@@ -67,7 +73,7 @@ export default function UserCard({ user }) {
           </svg>
           {user.address.address}, {user.address.city}
         </p>
-        <p className="user-designation">
+        <p className="user-card-designation">
           <svg
             fill="#cdc8b5"
             height="1.1rem"
@@ -78,11 +84,11 @@ export default function UserCard({ user }) {
             viewBox="0 0 512 512"
             className="me-2"
           >
-            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
             <g
               id="SVGRepo_tracerCarrier"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             ></g>
             <g id="SVGRepo_iconCarrier">
               {" "}
