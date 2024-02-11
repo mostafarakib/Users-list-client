@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Users.scss";
 import UserCard from "./UserCard";
+import UserAddForm from "./UserAddForm";
 
 export default function Users() {
   const [users, setUsers] = useState([]);
@@ -85,6 +86,7 @@ export default function Users() {
           <UserCard key={user.id} user={user} />
         ))}
       </div>
+      <UserAddForm />
     </div>
   );
 }
